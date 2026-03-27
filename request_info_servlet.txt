@@ -1,0 +1,28 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/RequestInfoServlet")
+public class RequestInfoServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        String ip = request.getRemoteAddr();
+        String browser = request.getHeader("User-Agent");
+        String serverName = request.getServerName();
+        int serverPort = request.getServerPort();
+
+        out.println("<html><body>");
+        out.println("<h2>Request Information</h2>");
+        out.println("IP Address: " + ip + "<br>");
+        out.println("Browser: " + browser + "<br>");
+        out.println("Server Name: " + serverName + "<br>");
+        out.println("Server Port: " + serverPort);
+        out.println("</body></html>");
+    }
+}
