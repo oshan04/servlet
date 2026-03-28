@@ -1,0 +1,30 @@
+Sevlet 
+
+
+1. In classes write java file and complie it
+2. In myapp write .html file 
+3. In terminal, after compiling java file
+   sudo systemctl restart tomcat
+4. go on browser and type
+   http://localhost:8080/myapp/filename.html
+
+
+
+JDBC 
+
+1. Create Database
+   su postgres;
+   psql
+   create database example;
+   \c example;
+   create table()
+   insert record
+
+2. files -> computer -> local -> lib ->open terminal
+3. Check java version(java -version)
+4. vim ~/.bashrc
+5. In that file paste(export CLASSPATH=$CLASSPATH :.:/usr/local/lib/postgres-42.6.0.jar)
+6. source ~/.bashrc
+7. vim sample.java
+8. javac -cp/usr/local/lib/postgresql-42.6.0.jar sample.java
+9. java -cp .:/usr/local/lib/postgresql-42.6.0.jar sample.java
